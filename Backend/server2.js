@@ -3,11 +3,12 @@ import"dotenv/config";
 import cors from "cors";
 import mongoose from "mongoose";
 import chatRoutes from "./routes/chat.js";
-
+import dns from "dns";
 
 const app = express();
 const PORT = 8080;
 
+dns.setServers(["8.8.8.8"]); // Set Google's DNS server
 
 app.use(cors());
 app.use(express.json());
