@@ -18,6 +18,10 @@ app.use(cors({
 }));
 app.use(express.json());
 
+app.use("/", (req, res) => {
+    res.send("Welcome to SigmaGPT API");
+  });
+
 app.use("/api", chatRoutes);
 
 app.listen(PORT, () => {
