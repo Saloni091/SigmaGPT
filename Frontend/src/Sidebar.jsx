@@ -1,7 +1,7 @@
-import "./Sidebar.css";
-import { useContext, useState, useEffect  } from "react";
-import { MyContext } from "./MyContext.jsx";
+import { useContext, useEffect } from "react";
 import { v1 as uuidv1 } from "uuid";
+import { MyContext } from "./MyContext.jsx";
+import "./Sidebar.css";
 
 function Sidebar() {
 
@@ -10,7 +10,7 @@ function Sidebar() {
 
  const getAllThreads = async () => {
         try {
-            const response = await fetch("https://sigmagpt-1-vocn.onrender.com/api/thread");
+            const response = await fetch("https://sigmagpt-2-q3rd.onrender.com/api/thread");
             const res = await response.json();
             const filteredData = res.map(thread => ({threadId: thread.threadId, title: thread.title}));
             //console.log(filteredData);
@@ -38,7 +38,7 @@ function Sidebar() {
         setCurrThreadId(newThreadId);
 
         try {
-            const response = await fetch(`http://sigmagpt-1-vocn.onrender.com/api/thread/${newThreadId}`);
+            const response = await fetch(`https://sigmagpt-2-q3rd.onrender.com/api/thread/${newThreadId}`);
             const res = await response.json();
             console.log(res);
             setPrevChats(res);
@@ -51,7 +51,7 @@ function Sidebar() {
 
     const deleteThread = async (threadId) => {
         try {
-            const response = await fetch(`http://sigmagpt-1-vocn.onrender.com/api/thread/${threadId}`, {method: "DELETE"});
+            const response = await fetch(`https://sigmagpt-2-q3rd.onrender.com/api/thread/${threadId}`, {method: "DELETE"});
             const res = await response.json();
             console.log(res);
 

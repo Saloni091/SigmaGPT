@@ -1,8 +1,8 @@
-import "./ChatWindow.css";
+import { useContext, useEffect, useState } from "react";
+import { ScaleLoader } from "react-spinners";
 import Chat from "./Chat.jsx";
+import "./ChatWindow.css";
 import { MyContext } from "./MyContext.jsx";
-import { useContext, useState, useEffect  } from "react";
-import {ScaleLoader} from "react-spinners";
 
 
 function ChatWindow() {
@@ -29,7 +29,7 @@ const getReply = async () => {
         };
 
         try {
-            const response = await fetch("https://sigmagpt-1-vocn.onrender.com/api/chat", options);
+            const response = await fetch("https://sigmagpt-2-q3rd.onrender.com/api/chat", options);
             const res = await response.json();
             console.log(res);
             setReply(res.reply);
