@@ -1,5 +1,6 @@
 import { useContext, useEffect } from "react";
 import { v1 as uuidv1 } from "uuid";
+import Gpt from "./assets/Chat.jpg";
 import { MyContext } from "./MyContext.jsx";
 import "./Sidebar.css";
 
@@ -73,7 +74,7 @@ function Sidebar() {
         <section className="sidebar">
             {/*new chat button*/}
             <button onClick={createNewChat}>
-                <img src="src\assets\Chat.jpg" height="30px"></img>
+                <img src={Gpt} height="30px"></img>
                 <span><i className="fa-solid fa-pen-to-square"></i></span>
             </button>
 
