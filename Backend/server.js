@@ -1,5 +1,5 @@
-import OpenAI from 'openai';
 import 'dotenv/config';
+import OpenAI from 'openai';
 
 
 const client = new OpenAI({
@@ -10,5 +10,7 @@ const response = await client.responses.create({
   model: 'gpt-4o-mini',
   input: 'Tell me a joke about computer science.',
 });
+
+
 
 console.log(response.output_text);
